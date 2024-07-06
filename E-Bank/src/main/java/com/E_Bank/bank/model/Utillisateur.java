@@ -1,5 +1,6 @@
 package com.E_Bank.bank.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,6 +28,7 @@ public class Utillisateur {
     private String motDePasse;
 
     @OneToMany(mappedBy = "utilisateur", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Compte> comptes;
 
 
